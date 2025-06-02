@@ -11,9 +11,23 @@ config_version=5
 [application]
 
 config/name="A Lawful Citizen"
+run/main_scene="uid://cdgpajkhpdty8"
 config/features=PackedStringArray("4.4", "GL Compatibility")
+
+[autoload]
+
+Global="*res://Scenes/global.tscn"
+Fade="*res://Scenes/fade.tscn"
+
+[display]
+
+window/size/viewport_width=960
+window/size/viewport_height=540
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
