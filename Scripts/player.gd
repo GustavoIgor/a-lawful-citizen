@@ -4,12 +4,17 @@ extends CharacterBody2D
 
 var game_paused = false
 
-var speed = 100
+var speed = 70
 
 func _process(delta: float) -> void:
 	if game_paused:
 		return
 	var direction := Input.get_vector("ui_left", "ui_right","ui_up", "ui_down")
+	if Input.is_action_pressed("sprint"):
+		speed = 150
+	else:
+		speed = 100
+		
 	velocity = direction * speed
 	move_and_slide()
 	animate_player(direction)
