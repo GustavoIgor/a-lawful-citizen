@@ -1,11 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://bto4jcnnedxiq"]
+[gd_scene load_steps=4 format=3 uid="uid://bto4jcnnedxiq"]
 
 [ext_resource type="Script" uid="uid://bim6dtxcx4r8u" path="res://Scripts/item_pickup.gd" id="1_14bl7"]
+[ext_resource type="Resource" uid="uid://bfjx6n1qe0e0m" path="res://Resources/coffee_mug.tres" id="2_wk703"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_14bl7"]
 
 [node name="ItemPickup" type="Area2D"]
 script = ExtResource("1_14bl7")
+item_data = ExtResource("2_wk703")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_14bl7")

@@ -15,19 +15,22 @@ alignment = 1
 script = ExtResource("1_k5gp2")
 
 [node name="Slot1" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture_normal = ExtResource("1_wdn4f")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Slot2" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture_normal = ExtResource("1_wdn4f")
-stretch_mode = 3
+stretch_mode = 5
 
 [node name="Slot3" type="TextureButton" parent="."]
+custom_minimum_size = Vector2(32, 32)
 layout_mode = 2
 texture_normal = ExtResource("1_wdn4f")
-stretch_mode = 3
+stretch_mode = 5
 
 [connection signal="pressed" from="Slot1" to="." method="_on_slot_1_pressed"]
 [connection signal="pressed" from="Slot2" to="." method="_on_slot_2_pressed"]

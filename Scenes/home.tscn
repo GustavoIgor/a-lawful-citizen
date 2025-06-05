@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://brdgnl2s1k23f" path="res://Scenes/player.tscn" id="3_llnbm"]
 [ext_resource type="PackedScene" uid="uid://m5k3w28p8jal" path="res://Scenes/ui.tscn" id="6_fhpuh"]
 [ext_resource type="PackedScene" uid="uid://bto4jcnnedxiq" path="res://Scenes/item_pickup.tscn" id="7_vkfas"]
-[ext_resource type="Resource" uid="uid://bfjx6n1qe0e0m" path="res://Resources/coffee_mug.tres" id="8_q1yq7"]
+[ext_resource type="Resource" uid="uid://cmvptbv6isq1d" path="res://Resources/sugar.tres" id="8_q1yq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhpuh"]
 texture = ExtResource("2_12ycv")
@@ -48,6 +48,8 @@ script = ExtResource("1_12ycv")
 
 [node name="Background" parent="." instance=ExtResource("1_ibywg")]
 
+[node name="UI" parent="." instance=ExtResource("6_fhpuh")]
+
 [node name="TileWrapper" type="Node2D" parent="."]
 
 [node name="Ground" type="TileMapLayer" parent="TileWrapper"]
@@ -58,6 +60,9 @@ tile_set = SubResource("TileSet_vkfas")
 tile_map_data = PackedByteArray("AAAJAAIAAAAAAAAAAAAKAAIAAAABAAAAAAALAAIAAAABAAAAAAAMAAIAAAABAAAAAAANAAIAAAABAAAAAAAOAAIAAAABAAAAAAAPAAIAAAACAAAAAAAJAAMAAAAAAAEAAAAJAAQAAAAAAAIAAAAPAAMAAAACAAEAAAAPAAQAAAACAAIAAAAKAAQAAAABAAIAAAALAAQAAAABAAIAAAANAAQAAAABAAIAAAAOAAQAAAABAAIAAAA=")
 tile_set = SubResource("TileSet_fhpuh")
 
+[node name="ItemPickup" parent="." instance=ExtResource("7_vkfas")]
+position = Vector2(438, 220)
+
 [node name="Player" parent="." instance=ExtResource("3_llnbm")]
 position = Vector2(345, 220)
 
@@ -65,8 +70,6 @@ position = Vector2(345, 220)
 position = Vector2(1, 0)
 zoom = Vector2(3, 3)
 
-[node name="UI" parent="." instance=ExtResource("6_fhpuh")]
-
-[node name="ItemPickup" parent="." instance=ExtResource("7_vkfas")]
-position = Vector2(466, 203)
+[node name="ItemPickup2" parent="." instance=ExtResource("7_vkfas")]
+position = Vector2(446, 270)
 item_data = ExtResource("8_q1yq7")

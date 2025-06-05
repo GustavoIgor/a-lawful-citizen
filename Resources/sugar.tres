@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://cmvptbv6isq1d"]
+
+[ext_resource type="Texture2D" uid="uid://ddlij4hmkrw0v" path="res://Assets/Arts/sugar.png" id="1_q7px3"]
+[ext_resource type="Script" uid="uid://cdmatdrrydq1v" path="res://Resources/item_data.gd" id="2_pfhy2"]
+
+[resource]
+script = ExtResource("2_pfhy2")
+name = "sugar"
+icon = ExtResource("1_q7px3")
+combinable_with = {
+"coffee_mug": "sugared_coffee"
+}
+metadata/_custom_type_script = "uid://cdmatdrrydq1v"

@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://bcnks7kwr5664"]
+
+[ext_resource type="PackedScene" uid="uid://brdgnl2s1k23f" path="res://Scenes/player.tscn" id="1_llmbb"]
+[ext_resource type="PackedScene" uid="uid://m5k3w28p8jal" path="res://Scenes/ui.tscn" id="1_vggx3"]
+[ext_resource type="PackedScene" uid="uid://bto4jcnnedxiq" path="res://Scenes/item_pickup.tscn" id="2_vggx3"]
+
+[node name="Office" type="Node2D"]
+
+[node name="UI" parent="." instance=ExtResource("1_vggx3")]
+
+[node name="Player" parent="." instance=ExtResource("1_llmbb")]
+
+[node name="Camera2D" type="Camera2D" parent="Player"]
+offset = Vector2(3, 3)
+
+[node name="ItemPickup" parent="." instance=ExtResource("2_vggx3")]
+position = Vector2(300, 83)

@@ -3,8 +3,11 @@ extends Node
 signal too_lawful
 signal no_lawful
 signal lawful_changed
+signal inventory_changed
 
 var lawful := 100
+var items: Array[ItemData] = []
+var selected_item: ItemData = null
 
 func change_lawful(amount : int):
 	lawful += amount
@@ -22,3 +25,23 @@ func change_lawful(amount : int):
 
 func set_lawful(amount : int):
 	lawful = amount
+
+func add_item(item: ItemData) -> bool:
+	if items.size() < 3:
+		items.append(item)
+		inventory_changed.emit()
+		return true
+	else:
+		return false
+
+func remove_item(item: ItemData):
+	items.erase(item)
+	inventory_changed.emit()
+
+func has_item(item: ItemData) -> bool:
+	return item in items
+
+func _input(event: InputEvent) -> void:
+	if Input.is_action_just_pressed("esc"):
+		selected_item = null
+		CursorManager.reset_cursor()
