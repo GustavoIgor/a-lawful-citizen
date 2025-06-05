@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://m5k3w28p8jal"]
+[gd_scene load_steps=4 format=3 uid="uid://m5k3w28p8jal"]
 
 [ext_resource type="Script" uid="uid://dm4hdu425pmec" path="res://Scripts/ui.gd" id="1_jxero"]
+[ext_resource type="PackedScene" uid="uid://s20fwkp3gmjv" path="res://Scenes/eyes.tscn" id="3_2246s"]
+[ext_resource type="PackedScene" uid="uid://bb6qfbo0c38u0" path="res://Scenes/inventory.tscn" id="3_nf4gj"]
 
 [node name="UI" type="CanvasLayer"]
 script = ExtResource("1_jxero")
@@ -12,3 +14,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="LowBar" type="VBoxContainer" parent="Control"]
+custom_minimum_size = Vector2(0, 32)
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -63.0
+grow_horizontal = 2
+grow_vertical = 0
+alignment = 1
+
+[node name="CenterContainer" type="CenterContainer" parent="Control/LowBar"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="Eyes" parent="Control/LowBar/CenterContainer" instance=ExtResource("3_2246s")]
+position = Vector2(16, 16)
+
+[node name="ProgressBar" type="ProgressBar" parent="Control/LowBar"]
+layout_mode = 2
+
+[node name="Inventory" parent="Control" instance=ExtResource("3_nf4gj")]
+layout_mode = 1
+offset_left = -32.0

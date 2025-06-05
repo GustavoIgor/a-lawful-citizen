@@ -18,6 +18,8 @@ config/features=PackedStringArray("4.4", "GL Compatibility")
 
 Global="*res://Scenes/global.tscn"
 Fade="*res://Scenes/fade.tscn"
+CursorManager="*res://Scenes/cursor_manager.tscn"
+ItemDataBase="*res://Scenes/item_data_base.tscn"
 
 [display]
 

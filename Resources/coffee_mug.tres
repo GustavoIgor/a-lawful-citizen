@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=3 format=3 uid="uid://bfjx6n1qe0e0m"]
+
+[ext_resource type="Texture2D" uid="uid://b7kpoejt02arh" path="res://Assets/Arts/coffe_mug.png" id="1_8wbrs"]
+[ext_resource type="Script" uid="uid://cdmatdrrydq1v" path="res://Resources/item_data.gd" id="2_4gyf6"]
+
+[resource]
+script = ExtResource("2_4gyf6")
+name = "coffee_mug"
+icon = ExtResource("1_8wbrs")
+combinable_with = {}
+metadata/_custom_type_script = "uid://cdmatdrrydq1v"

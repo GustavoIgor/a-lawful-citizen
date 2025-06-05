@@ -1,6 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://s20fwkp3gmjv"]
+[gd_scene load_steps=8 format=3 uid="uid://s20fwkp3gmjv"]
 
 [ext_resource type="Texture2D" uid="uid://lv10a8qg1xl6" path="res://Assets/Arts/eyes.png" id="1_67tjc"]
+[ext_resource type="Script" uid="uid://bdan4q8pqe30u" path="res://Scripts/eyes.gd" id="2_rf4jj"]
 
 [sub_resource type="Animation" id="Animation_rf4jj"]
 resource_name = "normal"
@@ -80,6 +81,7 @@ _data = {
 texture = ExtResource("1_67tjc")
 hframes = 12
 frame = 1
+script = ExtResource("2_rf4jj")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

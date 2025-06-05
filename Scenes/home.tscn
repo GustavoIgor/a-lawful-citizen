@@ -1,10 +1,13 @@
-[gd_scene load_steps=10 format=4 uid="uid://0a12ra83875u"]
+[gd_scene load_steps=13 format=4 uid="uid://0a12ra83875u"]
 
 [ext_resource type="Script" uid="uid://bmvtc1vlk1aqg" path="res://Scripts/home.gd" id="1_12ycv"]
 [ext_resource type="PackedScene" uid="uid://dp5g5yiyrm6bm" path="res://Scenes/background.tscn" id="1_ibywg"]
 [ext_resource type="Texture2D" uid="uid://dan5rwmyfb63p" path="res://Assets/Arts/ground_house.png" id="2_12ycv"]
 [ext_resource type="Texture2D" uid="uid://qduoxdgwk0hr" path="res://Assets/Arts/walls_house.png" id="3_12ycv"]
 [ext_resource type="PackedScene" uid="uid://brdgnl2s1k23f" path="res://Scenes/player.tscn" id="3_llnbm"]
+[ext_resource type="PackedScene" uid="uid://m5k3w28p8jal" path="res://Scenes/ui.tscn" id="6_fhpuh"]
+[ext_resource type="PackedScene" uid="uid://bto4jcnnedxiq" path="res://Scenes/item_pickup.tscn" id="7_vkfas"]
+[ext_resource type="Resource" uid="uid://bfjx6n1qe0e0m" path="res://Resources/coffee_mug.tres" id="8_q1yq7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fhpuh"]
 texture = ExtResource("2_12ycv")
@@ -61,3 +64,9 @@ position = Vector2(345, 220)
 [node name="Camera2D" type="Camera2D" parent="Player"]
 position = Vector2(1, 0)
 zoom = Vector2(3, 3)
+
+[node name="UI" parent="." instance=ExtResource("6_fhpuh")]
+
+[node name="ItemPickup" parent="." instance=ExtResource("7_vkfas")]
+position = Vector2(466, 203)
+item_data = ExtResource("8_q1yq7")

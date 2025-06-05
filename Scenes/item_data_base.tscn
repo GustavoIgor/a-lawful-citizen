@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://b7ass3pa6tgqh"]
+
+[ext_resource type="Script" uid="uid://ddn2w0qytiibp" path="res://Scripts/item_data_base.gd" id="1_veape"]
+
+[node name="ItemDataBase" type="Node"]
+script = ExtResource("1_veape")
