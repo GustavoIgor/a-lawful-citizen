@@ -6,6 +6,10 @@ var game_paused = false
 
 var speed = 70
 
+func _ready() -> void:
+	Global.game_paused.connect(_on_game_paused)
+	Global.game_unpaused.connect(_on_game_unpaused)
+
 func _process(delta: float) -> void:
 	if game_paused:
 		return
@@ -31,3 +35,9 @@ func animate_player(direction : Vector2):
 			
 	if direction == Vector2(0,0):
 		animation.stop()
+
+func _on_game_paused():
+	game_paused = true
+	
+func _on_game_unpaused():
+	game_paused = false

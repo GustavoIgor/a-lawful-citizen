@@ -1,0 +1,36 @@
+[gd_scene load_steps=2 format=3 uid="uid://c1c2u3b37mvfk"]
+
+[ext_resource type="Script" uid="uid://0hpgjwjgba4e" path="res://Scripts/dialogue_manager.gd" id="1_atyk4"]
+
+[node name="DialogueManager" type="CanvasLayer"]
+script = ExtResource("1_atyk4")
+
+[node name="Panel" type="Panel" parent="."]
+visible = false
+custom_minimum_size = Vector2(0, 100)
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 30.0
+offset_top = 10.0
+offset_right = -30.0
+offset_bottom = 110.0
+grow_horizontal = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Panel/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(500, 100)
+layout_mode = 2
+text = "Place"
+
+[node name="VBoxContainer" type="HBoxContainer" parent="Panel/VBoxContainer"]
+layout_mode = 2

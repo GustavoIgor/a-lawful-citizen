@@ -4,6 +4,8 @@ signal too_lawful
 signal no_lawful
 signal lawful_changed
 signal inventory_changed
+signal game_paused
+signal game_unpaused
 
 var lawful := 100
 var items: Array[ItemData] = []

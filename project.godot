@@ -20,6 +20,8 @@ Global="*res://Scenes/global.tscn"
 Fade="*res://Scenes/fade.tscn"
 CursorManager="*res://Scenes/cursor_manager.tscn"
 ItemDataBase="*res://Scenes/item_data_base.tscn"
+DialogueManager="*res://Scenes/dialogue_manager.tscn"
+DialogueDataBase="*res://Scenes/dialogue_data_base.tscn"
 
 [display]
 
