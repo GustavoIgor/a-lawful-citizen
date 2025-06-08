@@ -1,17 +1,64 @@
-[gd_scene load_steps=4 format=3 uid="uid://bcnks7kwr5664"]
+[gd_scene load_steps=10 format=4 uid="uid://bcnks7kwr5664"]
 
+[ext_resource type="Texture2D" uid="uid://c2cjvn265cyic" path="res://Assets/Arts/ground_office.png" id="1_cumm5"]
 [ext_resource type="PackedScene" uid="uid://brdgnl2s1k23f" path="res://Scenes/player.tscn" id="1_llmbb"]
 [ext_resource type="PackedScene" uid="uid://m5k3w28p8jal" path="res://Scenes/ui.tscn" id="1_vggx3"]
-[ext_resource type="PackedScene" uid="uid://bto4jcnnedxiq" path="res://Scenes/item_pickup.tscn" id="2_vggx3"]
+[ext_resource type="Texture2D" uid="uid://qduoxdgwk0hr" path="res://Assets/Arts/walls_house.png" id="2_cumm5"]
+[ext_resource type="PackedScene" uid="uid://dp5g5yiyrm6bm" path="res://Scenes/background.tscn" id="5_2jlrf"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2jlrf"]
+texture = ExtResource("1_cumm5")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7xo7e"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_2jlrf")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7xo7e"]
+texture = ExtResource("2_cumm5")
+texture_region_size = Vector2i(32, 64)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, -16, 32, 16, 32, 16, -32)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, -16, 32, 16, 32, 16, -32)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, -16, 32, 16, 32, 16, -32)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(5.7971, -32, 5.94574, 32, 16, 32, 16, -32)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, -16, 32, -6.04414, 32, -5.9888, -32)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -32, -16, 32, 16, 32, 16, 24.8369, -6.77369, 24.2724, -6.77369, -32)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, 25.0676, -16, 32, 16, 32, 16, 24.9289)
+2:2/0 = 0
+2:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(16, -32, 16, 32, -16, 32, -16, 24.8369, 6.39167, 25.0464, 5.94574, -32)
+
+[sub_resource type="TileSet" id="TileSet_eqlnk"]
+tile_size = Vector2i(32, 64)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_7xo7e")
 
 [node name="Office" type="Node2D"]
+
+[node name="TileWrapper" type="Node2D" parent="."]
+
+[node name="Ground" type="TileMapLayer" parent="TileWrapper"]
+tile_map_data = PackedByteArray("AAAJAAwAAAAAAAAAAAAKAAwAAAAAAAAAAAAKAA0AAAAAAAAAAAALAA0AAAAAAAAAAAAMAA0AAAAAAAAAAAANAA4AAAAAAAAAAAAOAA4AAAAAAAAAAAAPAA8AAAAAAAAAAAAQAA8AAAAAAAAAAAALAA4AAAAAAAAAAAAKAA4AAAAAAAAAAAAJAA4AAAAAAAAAAAAMAA4AAAAAAAAAAAAPAA4AAAAAAAAAAAAQAA4AAAAAAAAAAAAOAA8AAAAAAAAAAAANAA8AAAAAAAAAAAAMAA8AAAAAAAAAAAALAA8AAAAAAAAAAAAKAA8AAAAAAAAAAAAJAA8AAAAAAAAAAAAJAA0AAAAAAAAAAAALAAwAAAAAAAAAAAAMAAwAAAAAAAAAAAAMAAsAAAAAAAAAAAANAAsAAAAAAAAAAAANAAwAAAAAAAAAAAAOAAwAAAAAAAAAAAAPAAwAAAAAAAAAAAAQAAwAAAAAAAAAAAAQAA0AAAAAAAAAAAAPAA0AAAAAAAAAAAAOAA0AAAAAAAAAAAANAA0AAAAAAAAAAAARAA0AAAAAAAAAAAARAAwAAAAAAAAAAAARAA4AAAAAAAAAAAARAA8AAAAAAAAAAAAMAAoAAAAAAAAAAAALAAoAAAAAAAAAAAALAAsAAAAAAAAAAAAKAAsAAAAAAAAAAAAKAAoAAAAAAAAAAAAJAAoAAAAAAAAAAAAJAAsAAAAAAAAAAAAKAAkAAAAAAAAAAAAKAAgAAAAAAAAAAAAJAAgAAAAAAAAAAAAJAAkAAAAAAAAAAAALAAgAAAAAAAAAAAAMAAgAAAAAAAAAAAANAAgAAAAAAAAAAAAOAAgAAAAAAAAAAAAPAAgAAAAAAAAAAAAQAAgAAAAAAAAAAAARAAgAAAAAAAAAAAARAAkAAAAAAAAAAAARAAoAAAAAAAAAAAARAAsAAAAAAAAAAAAQAAsAAAAAAAAAAAAPAAoAAAAAAAAAAAAPAAkAAAAAAAAAAAAQAAkAAAAAAAAAAAAQAAoAAAAAAAAAAAAOAAsAAAAAAAAAAAAOAAoAAAAAAAAAAAANAAoAAAAAAAAAAAANAAkAAAAAAAAAAAAOAAkAAAAAAAAAAAALAAkAAAAAAAAAAAAMAAkAAAAAAAAAAAAPAAsAAAAAAAAAAAA=")
+tile_set = SubResource("TileSet_7xo7e")
+
+[node name="Walls" type="TileMapLayer" parent="TileWrapper"]
+tile_map_data = PackedByteArray("AAAJAAcAAAAAAAIAAAAJAAYAAAAAAAEAAAAJAAUAAAAAAAEAAAAJAAQAAAAAAAEAAAAJAAMAAAAAAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAABAAAAAAAQAAMAAAABAAAAAAARAAMAAAACAAAAAAARAAQAAAACAAEAAAARAAUAAAACAAEAAAARAAYAAAACAAEAAAARAAcAAAACAAIAAAAKAAcAAAABAAIAAAALAAcAAAABAAIAAAAQAAcAAAABAAIAAAAPAAcAAAABAAIAAAAOAAcAAAABAAIAAAAMAAcAAAABAAIAAAA=")
+tile_set = SubResource("TileSet_eqlnk")
 
 [node name="UI" parent="." instance=ExtResource("1_vggx3")]
 
 [node name="Player" parent="." instance=ExtResource("1_llmbb")]
+position = Vector2(516, 455)
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2(3, 3)
+zoom = Vector2(3, 3)
 
-[node name="ItemPickup" parent="." instance=ExtResource("2_vggx3")]
-position = Vector2(300, 83)
+[node name="Background" parent="." instance=ExtResource("5_2jlrf")]

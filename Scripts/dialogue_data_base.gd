@@ -15,3 +15,7 @@ var exemplo = [
 	},
 	{"name": "Você", "text": "Está feito."}
 ]
+
+var initial = [
+	{"name" : "Kim", "text": "See... I have been "}
+]
